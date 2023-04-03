@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AnimalDarling.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AnimalDarling"
+    xmlns:views="clr-namespace:AnimalDarling.Views"
+    Shell.ForegroundColor="Black">
+
+    <ShellContent
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate views:DashboardPage}"
+        Icon="iconblank.png"
+        Route="DashboardPage"
+        Shell.NavBarIsVisible="true" />
+    <ShellContent
+        Title="PetDetail"
+        ContentTemplate="{DataTemplate views:PetDetailPage}"
+        Icon="iconblank.png"
+        Route="PetDetailPage"
+        Shell.NavBarIsVisible="true" />
+    <ShellContent
+        Title="PetSearch"
+        ContentTemplate="{DataTemplate views:PetSearchPage}"
+        Icon="iconblank.png"
+        Route="PetSearchPage"
+        Shell.NavBarIsVisible="true" />
+    <ShellContent
+        Title="PetFinder"
+        ContentTemplate="{DataTemplate views:PetFinderPage}"
+        Icon="iconmap.png"
+        Route="PetFinderPage"
+        Shell.NavBarIsVisible="true" />
+    <ShellContent
+        Title="Localization"
+        ContentTemplate="{DataTemplate views:LocalizationPage}"
+        Icon="iconlocalization.png"
+        Route="LocalizationPage"
+        Shell.NavBarIsVisible="true" />
+</Shell>
