@@ -47,11 +47,14 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\cat.svg" />
+	  <None Remove="Resources\Images\clock.svg" />
 	  <None Remove="Resources\Images\cow.svg" />
 	  <None Remove="Resources\Images\dog.svg" />
 	  <None Remove="Resources\Images\dove.svg" />
+	  <None Remove="Resources\Images\female.svg" />
 	  <None Remove="Resources\Images\fish.svg" />
 	  <None Remove="Resources\Images\horse.svg" />
+	  <None Remove="Resources\Images\location.svg" />
 	</ItemGroup>
 
 	<ItemGroup>

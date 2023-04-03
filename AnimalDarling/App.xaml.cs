@@ -10,5 +10,7 @@ public partial class App : Application
 		// CultureInfo.CurrentCulture = CultureInfo.CurrentUICulture = new CultureInfo("es");
 
 		MainPage = new AppShell();
-	}
+
+        Application.Current.UserAppTheme = AppTheme.Light;
+    }
 }

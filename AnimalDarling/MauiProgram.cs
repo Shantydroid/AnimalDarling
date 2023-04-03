@@ -18,26 +18,17 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		builder.Services.AddSingleton<DashboardViewModel>();
 
-		builder.Services.AddSingleton<DashboardPage>();
+        builder.Services.AddScopedWithShellRoute<DashboardPage, DashboardViewModel>(nameof(DashboardPage));
 
-		builder.Services.AddSingleton<PetDetailViewModel>();
+        builder.Services.AddScopedWithShellRoute<PetDetailPage, PetDetailViewModel>(nameof(PetDetailPage));
 
-		builder.Services.AddSingleton<PetDetailPage>();
+        builder.Services.AddScopedWithShellRoute<LocalizationPage, LocalizationViewModel>(nameof(LocalizationPage));
 
-		builder.Services.AddSingleton<PetSearchViewModel>();
+        builder.Services.AddScopedWithShellRoute<PetFinderPage, PetFinderViewModel>(nameof(PetFinderPage));
 
-		builder.Services.AddSingleton<PetSearchPage>();
+        builder.Services.AddScopedWithShellRoute<PetSearchPage, PetSearchViewModel>(nameof(PetSearchPage));
 
-		builder.Services.AddSingleton<PetFinderViewModel>();
-
-		builder.Services.AddSingleton<PetFinderPage>();
-
-		builder.Services.AddSingleton<LocalizationViewModel>();
-
-		builder.Services.AddSingleton<LocalizationPage>();
-
-		return builder.Build();
+        return builder.Build();
 	}
 }

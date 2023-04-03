@@ -14,12 +14,6 @@
         Route="DashboardPage"
         Shell.NavBarIsVisible="true" />
     <ShellContent
-        Title="PetDetail"
-        ContentTemplate="{DataTemplate views:PetDetailPage}"
-        Icon="iconblank.png"
-        Route="PetDetailPage"
-        Shell.NavBarIsVisible="true" />
-    <ShellContent
         Title="PetSearch"
         ContentTemplate="{DataTemplate views:PetSearchPage}"
         Icon="iconblank.png"

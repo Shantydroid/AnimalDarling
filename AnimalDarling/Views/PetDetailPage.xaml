@@ -1,8 +1,162 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			 xmlns:vm="clr-namespace:AnimalDarling.ViewModels"
-			 x:Class="AnimalDarling.Views.PetDetailPage"
-			 x:DataType="vm:PetDetailViewModel">
+<ContentPage
+    x:Class="AnimalDarling.Views.PetDetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:vm="clr-namespace:AnimalDarling.ViewModels"
+    x:DataType="vm:PetDetailViewModel"
+    Shell.BackgroundColor="#fbce56">
 
+    <ScrollView>
+        <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Aspect="AspectFill"
+                HeightRequest="400"
+                Source="{Binding Data.Image}" />
+            <Frame
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="20,-50,20,10"
+                BackgroundColor="#f9f9f9"
+                CornerRadius="40"
+                HasShadow="False"
+                HeightRequest="100">
+                <Grid
+                    Padding="20,5"
+                    ColumnDefinitions="Auto,*,Auto"
+                    HorizontalOptions="FillAndExpand"
+                    RowDefinitions="Auto,Auto,Auto"
+                    RowSpacing="10"
+                    VerticalOptions="Center">
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        FontSize="21"
+                        Text="Martha"
+                        TextColor="Black" />
+                    <Image
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Aspect="AspectFit"
+                        HeightRequest="15"
+                        HorizontalOptions="End"
+                        Source="female.svg"
+                        WidthRequest="15" />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        FontSize="17"
+                        Text="Border collie"
+                        TextColor="#797979" />
+                    <Image
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="0,0,10,0"
+                        Aspect="AspectFit"
+                        HeightRequest="15"
+                        HorizontalOptions="End"
+                        Source="clock.svg"
+                        WidthRequest="15" />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        FontSize="15"
+                        HorizontalTextAlignment="End"
+                        Text="1 year old"
+                        TextColor="#797979" />
+                    <Image
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Aspect="AspectFit"
+                        HeightRequest="15"
+                        HorizontalOptions="Start"
+                        Source="location.svg"
+                        WidthRequest="22" />
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        FontSize="15"
+                        HorizontalOptions="Center"
+                        Text="120 N 4th St, Brooklyn, NY, USA"
+                        TextColor="#acacac"
+                        TranslationX="15"
+                        VerticalTextAlignment="Center" />
+                </Grid>
+            </Frame>
+            <!--  Rounded image  -->
+            <toolkit:AvatarView
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.Column="0"
+                CornerRadius="35"
+                HeightRequest="75"
+                ImageSource="{Binding Data.Image}"
+                VerticalOptions="Center"
+                WidthRequest="75" />
+
+            <!--  Main name, roles and date  -->
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="0,30,0,0"
+                FontAttributes="Bold"
+                HorizontalOptions="Start"
+                Text="Harry Jones"
+                TextColor="Black" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="2"
+                Margin="0,30,25,0"
+                FontSize="14"
+                HorizontalTextAlignment="End"
+                Text="24.01.2022"
+                TextColor="#acacac" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="1"
+                HorizontalOptions="Start"
+                Text="Owner"
+                TextColor="#acacac" />
+
+            <Label
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="{OnPlatform Android='35,20,35,15',
+                                    iOS='35,20,35,0'}"
+                Text="Hi! Martha has impeccable manners when I fisrt met her, most of which I've since undone. She's also become very 'chatty' with a full range of Scooby Doo noises when she doesn't feel she's getting the attention she deserves."
+                TextColor="#a5a5a5" />
+
+            <Button
+                Grid.Row="5"
+                Grid.Column="0"
+                BackgroundColor="White"
+                BorderColor="Silver"
+                BorderWidth="1"
+                CornerRadius="25"
+                HeightRequest="50"
+                HorizontalOptions="End"
+                Text="♡"
+                TextColor="Black"
+                WidthRequest="50" />
+            <Button
+                Grid.Row="5"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Margin="20,0,40,0"
+                BackgroundColor="#fbce56"
+                CornerRadius="22"
+                FontAttributes="Bold"
+                Text="Adoption"
+                TextColor="Black" />
+        </Grid>
+    </ScrollView>
 </ContentPage>

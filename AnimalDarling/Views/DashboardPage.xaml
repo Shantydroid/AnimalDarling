@@ -7,30 +7,51 @@
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:vm="clr-namespace:AnimalDarling.ViewModels"
     x:Name="DashBoardPage"
-    x:DataType="vm:DashboardViewModel">
+    x:DataType="vm:DashboardViewModel"
+    Shell.BackgroundColor="#fbce56">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="#fbce56" StatusBarStyle="LightContent" />
+    </ContentPage.Behaviors>
     <Shell.TitleView>
         <Grid ColumnDefinitions="*, Auto">
-            <SearchBar
+            <Frame
                 Grid.Column="0"
-                CancelButtonColor="Black"
-                TextColor="Black"
-                VerticalOptions="Center" />
+                Margin="5"
+                Padding="0"
+                BackgroundColor="Beige"
+                CornerRadius="20"
+                HasShadow="False">
+                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image
+                        Aspect="AspectFit"
+                        HeightRequest="15"
+                        Source="location.svg"
+                        WidthRequest="15" />
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="15"
+                        Text="New York, USA"
+                        TextColor="Black" />
+                </HorizontalStackLayout>
+            </Frame>
+
             <toolkit:AvatarView
                 Grid.Column="1"
+                Margin="5"
                 ImageSource="{Binding AvatarSource}"
                 Text="{Binding AvatarText}"
                 VerticalOptions="Center" />
         </Grid>
     </Shell.TitleView>
 
-    <Grid RowDefinitions="Auto, 90*">
+    <Grid RowDefinitions="Auto, *">
         <CollectionView
             Grid.Row="0"
             ItemsLayout="HorizontalList"
             ItemsSource="{Binding RazeCollection}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Razes">
-                    <VerticalStackLayout Margin="20">
+                    <VerticalStackLayout Margin="20,20,20,0">
                         <Border
                             Padding="10"
                             BackgroundColor="White"
@@ -99,11 +120,22 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:RazesDetail">
-                    <Grid>
-                        <Border
-                            Margin="10"
-                            StrokeShape="RoundRectangle 25"
-                            StrokeThickness="0">
+                    <Grid Margin="10" HeightRequest="250">
+                        <!--<Grid.Triggers>
+                            <DataTrigger
+                                Binding="{Binding IsPar, Mode=TwoWay}"
+                                TargetType="Grid"
+                                Value="True">
+                                <Setter Property="Margin" Value="10,0,10,0" />
+                            </DataTrigger>
+                            <DataTrigger
+                                Binding="{Binding IsPar, Mode=TwoWay}"
+                                TargetType="Grid"
+                                Value="False">
+                                <Setter Property="Margin" Value="0,80,10,0" />
+                            </DataTrigger>
+                        </Grid.Triggers>-->
+                        <Border StrokeShape="RoundRectangle 25">
                             <Image
                                 Aspect="Fill"
                                 Source="{Binding Image}"
@@ -126,6 +158,9 @@
                                 Text="{Binding Text}"
                                 TextColor="White" />
                         </StackLayout>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Path=NavigateToDetailCommand, Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}}" CommandParameter="{Binding .}" />
+                        </Grid.GestureRecognizers>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
