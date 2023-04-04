@@ -3,28 +3,26 @@ using System.Web;
 
 namespace AnimalDarling.ViewModels;
 
-public partial class PetDetailViewModel : BaseViewModel, IQueryAttributable
+public partial class PetDetailViewModel : BaseViewModel, IQueryAttributable, INotifyPropertyChanged
 {
 	[ObservableProperty]
 	RazesDetail data;
 
     public ObservableCollection<CarouselItem> CarouselSource { get; set; } = new ObservableCollection<CarouselItem>();
 
-    public PetDetailViewModel()
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            CarouselSource.Add(new CarouselItem { Image = ImageSource.FromUri(new Uri("https://www.rsce.es/images/rsce/RREE/Nuevas_fotos/Ca-Bestiar1.jpg")) });
-        }
-    }
-
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
         try
 		{
-			Data = (RazesDetail)query["razes"];
+            Data = (RazesDetail)query["razes"];            
+
+            CarouselSource.Clear();
+            
+            foreach (var item in Data.Images) {
+                CarouselSource.Add(new CarouselItem { Image = item });
+            }
         }
-		catch (Exception)
+		catch (Exception e)
 		{
 
 		}

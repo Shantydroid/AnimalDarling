@@ -52,13 +52,14 @@
             ItemsSource="{Binding RazeCollection}">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Razes">
-                    <VerticalStackLayout Margin="20,20,20,0">
+                    <VerticalStackLayout Margin="20,20,0,0">
                         <Border
                             Padding="10"
                             BackgroundColor="White"
-                            HeightRequest="75"
+                            HeightRequest="150"
                             StrokeShape="RoundRectangle 20"
-                            StrokeThickness="1">
+                            StrokeThickness="1"
+                            WidthRequest="150">
                             <Border.Triggers>
                                 <DataTrigger
                                     Binding="{Binding IsSelected, Mode=TwoWay}"
@@ -76,7 +77,7 @@
                             <Image
                                 Background="Transparent"
                                 Source="{Binding Image}"
-                                WidthRequest="50" />
+                                WidthRequest="75" />
                         </Border>
 
                         <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
@@ -139,7 +140,7 @@
                         <Border StrokeShape="RoundRectangle 25">
                             <Image
                                 Aspect="AspectFill"
-                                Source="{Binding Image}"
+                                Source="{Binding Images[0]}"
                                 WidthRequest="200" />
                         </Border>
                         <StackLayout Padding="20,0,0,20" VerticalOptions="End">
