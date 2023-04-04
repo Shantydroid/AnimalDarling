@@ -9,6 +9,7 @@
     x:Name="DashBoardPage"
     x:DataType="vm:DashboardViewModel"
     Shell.BackgroundColor="{StaticResource Primary}">
+
     <ContentPage.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="{StaticResource Primary}" StatusBarStyle="LightContent" />
     </ContentPage.Behaviors>

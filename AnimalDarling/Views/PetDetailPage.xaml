@@ -35,21 +35,17 @@
                 IndicatorSize="10"
                 SelectedIndicatorColor="DarkGray"
                 VerticalOptions="End" />
-            <Button
+            <ImageButton
                 Grid.ColumnSpan="3"
                 Margin="10"
-                Padding="0,-15,0,0"
                 BackgroundColor="white"
                 BorderWidth="1"
                 Command="{Binding Path=BackButtonCommand}"
                 CornerRadius="25"
-                FontAttributes="Bold"
-                FontSize="40"
                 HeightRequest="50"
                 HorizontalOptions="Start"
                 Opacity="0.4"
-                Text="←"
-                TextColor="Black"
+                Source="backarrow.png"
                 VerticalOptions="Start"
                 WidthRequest="50" />
             <Frame

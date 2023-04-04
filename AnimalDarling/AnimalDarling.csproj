@@ -46,6 +46,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\BackArrow.png" />
 	  <None Remove="Resources\Images\cat.svg" />
 	  <None Remove="Resources\Images\clock.svg" />
 	  <None Remove="Resources\Images\cow.svg" />
