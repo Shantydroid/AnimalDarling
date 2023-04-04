@@ -19,15 +19,15 @@ public static class MauiProgram
 			});
 
 
-        builder.Services.AddScopedWithShellRoute<DashboardPage, DashboardViewModel>(nameof(DashboardPage));
+        builder.Services.AddSingletonWithShellRoute<DashboardPage, DashboardViewModel>(nameof(DashboardPage));
 
-        builder.Services.AddScopedWithShellRoute<PetDetailPage, PetDetailViewModel>(nameof(PetDetailPage));
+        builder.Services.AddSingletonWithShellRoute<PetDetailPage, PetDetailViewModel>(nameof(PetDetailPage));
 
-        builder.Services.AddScopedWithShellRoute<LocalizationPage, LocalizationViewModel>(nameof(LocalizationPage));
+        builder.Services.AddSingletonWithShellRoute<LocalizationPage, LocalizationViewModel>(nameof(LocalizationPage));
 
-        builder.Services.AddScopedWithShellRoute<PetFinderPage, PetFinderViewModel>(nameof(PetFinderPage));
+        builder.Services.AddSingletonWithShellRoute<PetFinderPage, PetFinderViewModel>(nameof(PetFinderPage));
 
-        builder.Services.AddScopedWithShellRoute<PetSearchPage, PetSearchViewModel>(nameof(PetSearchPage));
+        builder.Services.AddSingletonWithShellRoute<PetSearchPage, PetSearchViewModel>(nameof(PetSearchPage));
 
         return builder.Build();
 	}

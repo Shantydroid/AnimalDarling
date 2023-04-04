@@ -18,20 +18,23 @@ public partial class DashboardViewModel : BaseViewModel
     public ObservableCollection<Razes> RazeCollection { get; set; } = new ObservableCollection<Razes>();
     public ObservableCollection<RazesDetail> RazesDetailCollection { get; set; } = new ObservableCollection<RazesDetail>();
 
-
     public DashboardViewModel()
     {
-        AvatarSource = "https://media.istockphoto.com/id/1209654046/vector/user-avatar-profile-icon-black-vector-illustration.jpg?s=612x612&w=0&k=20&c=EOYXACjtZmZQ5IsZ0UUp1iNmZ9q2xl1BD1VvN6tZ2UI=";
+        AvatarSource = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUGxavCnDLJz7fZPxRUjZkKY8FL5Dxf6iiHc0OymxANteE1I7Aui89RSzwuU1QSuOvUIs&usqp=CAU";
         AvatarText = "CT";
 
-        RazeCollection.Add(new Razes { Id = 1, Image = "dog.svg", Text = "Dogs", IsSelected = true });
-        RazeCollection.Add(new Razes { Id = 2, Image = "cat.svg", Text = "Cats" });
-        RazeCollection.Add(new Razes { Id = 3, Image = "cow.svg", Text = "Vacas" });
-        RazeCollection.Add(new Razes { Id = 4, Image = "dove.svg", Text = "Pájaros" });
-        RazeCollection.Add(new Razes { Id = 5, Image = "fish.svg", Text = "Peces" });
-        RazeCollection.Add(new Razes { Id = 6, Image = "horse.svg", Text = "Caballos" });
+        RazeCollection.Add(new Razes { Id = 1, Image = "dog.svg", Text = "Pastor catalán", IsSelected = true });
+        RazeCollection.Add(new Razes { Id = 2, Image = "dog.svg", Text = "Pastor mallorquín"});
+        RazeCollection.Add(new Razes { Id = 3, Image = "dog.svg", Text = "Mastín español" });
+        RazeCollection.Add(new Razes { Id = 4, Image = "dog.svg", Text = "Mastín del pirineo" });
+        RazeCollection.Add(new Razes { Id = 5, Image = "dog.svg", Text = "Dogo mallorquín" });
+        RazeCollection.Add(new Razes { Id = 6, Image = "dog.svg", Text = "Ratonero valenciano" });
+        RazeCollection.Add(new Razes { Id = 7, Image = "dog.svg", Text = "Podenco canario" });
+        RazeCollection.Add(new Razes { Id = 8, Image = "dog.svg", Text = "Pedenco ibicenco" });
+        RazeCollection.Add(new Razes { Id = 9, Image = "dog.svg", Text = "Sabueso español" });
+        RazeCollection.Add(new Razes { Id = 10, Image = "dog.svg", Text = "Perdiguero de burgos" });
 
-        RazesDetailCollection.Add(new RazesDetail { Image = ImageSource.FromUri(new Uri("https://www.koin.com/wp-content/uploads/sites/10/2023/01/Image-7.jpeg?w=540")), Title = "Cherry", SubTitle = "King Charles Spaniel", Text = "8 mth. Girl" });
+        RazesDetailCollection.Add(new RazesDetail { Image = ImageSource.FromUri(new Uri("https://www.rsce.es/images/rsce/RREE/Nuevas_fotos/CA_BESTIAR-cuerpo.jpg")), Title = "Pastor catalán", SubTitle = " Perro de pastoreo, de guarda y de defensa.", Text = "8 meses. Macho" });
         RazesDetailCollection.Add(new RazesDetail { Image = ImageSource.FromUri(new Uri("https://www.koin.com/wp-content/uploads/sites/10/2023/01/Image-7.jpeg?w=540")), Title = "Cherry", SubTitle = "King Charles Spaniel", Text = "8 mth. Girl" });
         RazesDetailCollection.Add(new RazesDetail { Image = ImageSource.FromUri(new Uri("https://www.koin.com/wp-content/uploads/sites/10/2023/01/Image-7.jpeg?w=540")), Title = "Cherry", SubTitle = "King Charles Spaniel", Text = "8 mth. Girl" });
         RazesDetailCollection.Add(new RazesDetail { Image = ImageSource.FromUri(new Uri("https://www.koin.com/wp-content/uploads/sites/10/2023/01/Image-7.jpeg?w=540")), Title = "Cherry", SubTitle = "King Charles Spaniel", Text = "8 mth. Girl" });

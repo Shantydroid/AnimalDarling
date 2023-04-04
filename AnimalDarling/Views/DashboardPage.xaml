@@ -8,9 +8,9 @@
     xmlns:vm="clr-namespace:AnimalDarling.ViewModels"
     x:Name="DashBoardPage"
     x:DataType="vm:DashboardViewModel"
-    Shell.BackgroundColor="#fbce56">
+    Shell.BackgroundColor="{StaticResource Primary}">
     <ContentPage.Behaviors>
-        <toolkit:StatusBarBehavior StatusBarColor="#fbce56" StatusBarStyle="LightContent" />
+        <toolkit:StatusBarBehavior StatusBarColor="{StaticResource Primary}" StatusBarStyle="LightContent" />
     </ContentPage.Behaviors>
     <Shell.TitleView>
         <Grid ColumnDefinitions="*, Auto">
@@ -30,7 +30,7 @@
                     <Label
                         FontAttributes="Bold"
                         FontSize="15"
-                        Text="New York, USA"
+                        Text="Zaragoza, AR"
                         TextColor="Black" />
                 </HorizontalStackLayout>
             </Frame>
@@ -63,7 +63,7 @@
                                     Binding="{Binding IsSelected, Mode=TwoWay}"
                                     TargetType="Border"
                                     Value="True">
-                                    <Setter Property="BackgroundColor" Value="#fbce56" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
                                 </DataTrigger>
                                 <DataTrigger
                                     Binding="{Binding IsSelected, Mode=TwoWay}"
@@ -80,7 +80,7 @@
 
                         <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
                             <Ellipse
-                                Fill="#fbce56"
+                                Fill="{StaticResource Primary}"
                                 HeightRequest="10"
                                 HorizontalOptions="Start"
                                 StrokeThickness="4"
@@ -137,7 +137,7 @@
                         </Grid.Triggers>-->
                         <Border StrokeShape="RoundRectangle 25">
                             <Image
-                                Aspect="Fill"
+                                Aspect="AspectFill"
                                 Source="{Binding Image}"
                                 WidthRequest="200" />
                         </Border>

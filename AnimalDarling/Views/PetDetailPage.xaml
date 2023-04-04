@@ -3,30 +3,67 @@
     x:Class="AnimalDarling.Views.PetDetailPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:AnimalDarling.Models"
     xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:vm="clr-namespace:AnimalDarling.ViewModels"
     x:DataType="vm:PetDetailViewModel"
-    Shell.BackgroundColor="#fbce56">
+    Shell.BackgroundColor="#fbce56"
+    Shell.NavBarIsVisible="False"
+    Shell.PresentationMode="ModalAnimated">
 
-    <ScrollView>
+    <ScrollView Margin="0,0,0,10">
         <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
-            <Image
-                Grid.Row="0"
-                Grid.Column="0"
+            <CarouselView
                 Grid.ColumnSpan="3"
-                Aspect="AspectFill"
-                HeightRequest="400"
-                Source="{Binding Data.Image}" />
+                IndicatorView="indicatorView"
+                ItemsSource="{Binding CarouselSource}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate x:DataType="models:CarouselItem">
+                        <Image
+                            Aspect="AspectFill"
+                            HeightRequest="400"
+                            Source="{Binding Image}" />
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView
+                x:Name="indicatorView"
+                Grid.Column="1"
+                Margin="0,0,0,80"
+                HorizontalOptions="Center"
+                IndicatorColor="LightGray"
+                IndicatorSize="10"
+                SelectedIndicatorColor="DarkGray"
+                VerticalOptions="End" />
+            <Button
+                Grid.ColumnSpan="3"
+                Margin="10"
+                Padding="0,-15,0,0"
+                BackgroundColor="white"
+                BorderWidth="1"
+                Command="{Binding Path=BackButtonCommand}"
+                CornerRadius="25"
+                FontAttributes="Bold"
+                FontSize="40"
+                HeightRequest="50"
+                HorizontalOptions="Start"
+                Opacity="0.4"
+                Text="←"
+                TextColor="Black"
+                VerticalOptions="Start"
+                WidthRequest="50" />
             <Frame
                 Grid.Row="1"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
-                Margin="20,-50,20,10"
+                Margin="20,-60,20,10"
+                Padding="25"
                 BackgroundColor="#f9f9f9"
                 CornerRadius="40"
                 HasShadow="False"
-                HeightRequest="100">
+                HeightRequest="120">
                 <Grid
+                    Margin="0,10,0,10"
                     Padding="20,5"
                     ColumnDefinitions="Auto,*,Auto"
                     HorizontalOptions="FillAndExpand"
@@ -69,7 +106,7 @@
                         Grid.Column="2"
                         FontSize="15"
                         HorizontalTextAlignment="End"
-                        Text="1 year old"
+                        Text="1 año"
                         TextColor="#797979" />
                     <Image
                         Grid.Row="2"
@@ -85,7 +122,7 @@
                         Grid.ColumnSpan="3"
                         FontSize="15"
                         HorizontalOptions="Center"
-                        Text="120 N 4th St, Brooklyn, NY, USA"
+                        Text="120 N 4th St, Zaragoza, Aragón"
                         TextColor="#acacac"
                         TranslationX="15"
                         VerticalTextAlignment="Center" />
@@ -132,7 +169,7 @@
                 Grid.ColumnSpan="3"
                 Margin="{OnPlatform Android='35,20,35,15',
                                     iOS='35,20,35,0'}"
-                Text="Hi! Martha has impeccable manners when I fisrt met her, most of which I've since undone. She's also become very 'chatty' with a full range of Scooby Doo noises when she doesn't feel she's getting the attention she deserves."
+                Text="¡Hola! Martha tiene modales impecables cuando la conocí, la mayoría de los cuales he deshecho desde entonces. También se ha vuelto muy 'habladora' con una amplia gama de ruidos de Scooby Doo cuando siente que no está recibiendo la atención que merece."
                 TextColor="#a5a5a5" />
 
             <Button
