@@ -39,7 +39,7 @@
             <toolkit:AvatarView
                 Grid.Column="1"
                 Margin="5"
-                ImageSource="{Binding AvatarSource}"
+                ImageSource="profile"
                 Text="{Binding AvatarText}"
                 VerticalOptions="Center" />
         </Grid>
@@ -123,20 +123,6 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:RazesDetail">
                     <Grid Margin="10" HeightRequest="250">
-                        <!--<Grid.Triggers>
-                            <DataTrigger
-                                Binding="{Binding IsPar, Mode=TwoWay}"
-                                TargetType="Grid"
-                                Value="True">
-                                <Setter Property="Margin" Value="10,0,10,0" />
-                            </DataTrigger>
-                            <DataTrigger
-                                Binding="{Binding IsPar, Mode=TwoWay}"
-                                TargetType="Grid"
-                                Value="False">
-                                <Setter Property="Margin" Value="0,80,10,0" />
-                            </DataTrigger>
-                        </Grid.Triggers>-->
                         <Border StrokeShape="RoundRectangle 25">
                             <Image
                                 Aspect="AspectFill"
@@ -145,20 +131,56 @@
                         </Border>
                         <StackLayout Padding="20,0,0,20" VerticalOptions="End">
                             <Label
+                                Margin="0,0,0,5"
                                 FontAttributes="Bold"
+                                FontSize="15"
                                 HorizontalTextAlignment="Start"
-                                Text="{Binding Title}"
+                                Text="{Binding Name}"
                                 TextColor="White" />
-                            <Label
-                                FontAttributes="Bold"
-                                HorizontalTextAlignment="Start"
-                                Text="{Binding SubTitle}"
-                                TextColor="White" />
-                            <Label
-                                FontAttributes="Bold"
-                                HorizontalTextAlignment="Start"
-                                Text="{Binding Text}"
-                                TextColor="White" />
+                            <HorizontalStackLayout Margin="0,0,0,5">
+                                <Label
+                                    FontFamily="FontAwesomeSolid"
+                                    FontSize="12"
+                                    HorizontalTextAlignment="Start"
+                                    Text="&#xf3c5;"
+                                    TextColor="White"
+                                    VerticalTextAlignment="Center" />
+                                <Label
+                                    Margin="5,0,0,0"
+                                    FontSize="12"
+                                    HorizontalTextAlignment="Start"
+                                    Text="{Binding Title}"
+                                    TextColor="White" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout>
+                                <Label
+                                    FontFamily="FontAwesomeRegular"
+                                    FontSize="12"
+                                    HorizontalTextAlignment="Start"
+                                    Text="&#xf017;"
+                                    TextColor="White"
+                                    VerticalTextAlignment="Center" />
+                                <Label
+                                    Margin="5,0,15,0"
+                                    FontSize="12"
+                                    HorizontalTextAlignment="Start"
+                                    Text="{Binding Age}"
+                                    TextColor="White" />
+                                <Label
+                                    FontFamily="FontAwesomeSolid"
+                                    FontSize="12"
+                                    HorizontalTextAlignment="Start"
+                                    Text="{Binding GenderIcon}"
+                                    TextColor="White"
+                                    VerticalTextAlignment="Center" />
+                                <Label
+                                    Margin="5,0,0,0"
+                                    FontSize="12"
+                                    HorizontalTextAlignment="Start"
+                                    Text="{Binding Gender}"
+                                    TextColor="White" />
+                            </HorizontalStackLayout>
                         </StackLayout>
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding Path=NavigateToDetailCommand, Source={RelativeSource AncestorType={x:Type vm:DashboardViewModel}}}" CommandParameter="{Binding .}" />
