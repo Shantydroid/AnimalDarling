@@ -3,7 +3,7 @@ using System.Web;
 
 namespace AnimalDarling.ViewModels;
 
-public partial class PetDetailViewModel : BaseViewModel, IQueryAttributable, INotifyPropertyChanged
+public partial class PetDetailViewModel : BaseViewModel, IQueryAttributable
 {
 	[ObservableProperty]
 	RazesDetail data;
@@ -16,13 +16,11 @@ public partial class PetDetailViewModel : BaseViewModel, IQueryAttributable, INo
 		{
             Data = (RazesDetail)query["razes"];            
 
-            CarouselSource.Clear();
-            
             foreach (var item in Data.Images) {
                 CarouselSource.Add(new CarouselItem { Image = item });
             }
         }
-		catch (Exception e)
+		catch (Exception)
 		{
 
 		}

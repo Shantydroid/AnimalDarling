@@ -23,12 +23,12 @@ public partial class DashboardViewModel : BaseViewModel
         AvatarSource = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUGxavCnDLJz7fZPxRUjZkKY8FL5Dxf6iiHc0OymxANteE1I7Aui89RSzwuU1QSuOvUIs&usqp=CAU";
         AvatarText = "CT";
 
-        RazeCollection.Add(new Razes { Id = 1, Image = "dog.svg", Text = "Pastor mallorquín", IsSelected = true });
-        RazeCollection.Add(new Razes { Id = 2, Image = "dog.svg", Text = "Pastor Catalán"});
-        RazeCollection.Add(new Razes { Id = 3, Image = "dog.svg", Text = "Mastín español" });
-        RazeCollection.Add(new Razes { Id = 4, Image = "dog.svg", Text = "Mastín del pirineo" });
-        RazeCollection.Add(new Razes { Id = 5, Image = "dog.svg", Text = "Dogo mallorquín" });
-        RazeCollection.Add(new Razes { Id = 6, Image = "dog.svg", Text = "Presa Canario" });
+        RazeCollection.Add(new Razes { Id = 1, Image = "mallorquin.svg", Text = "Pastor mallorquín", IsSelected = true });
+        RazeCollection.Add(new Razes { Id = 2, Image = "catalan.svg", Text = "Pastor Catalán" });
+        RazeCollection.Add(new Razes { Id = 3, Image = "mastin.svg", Text = "Mastín español" });
+        RazeCollection.Add(new Razes { Id = 4, Image = "pirineo.svg", Text = "Mastín del pirineo" });
+        RazeCollection.Add(new Razes { Id = 5, Image = "dogomallorquin.svg", Text = "Dogo mallorquín" });
+        RazeCollection.Add(new Razes { Id = 6, Image = "presacanario.svg", Text = "Presa Canario" });
 
         var listPastorMallorquin = new List<ImageSource>();
         listPastorMallorquin.Add(ImageSource.FromUri(new Uri("https://www.rsce.es/images/rsce/RREE/Nuevas_fotos/Ca-Bestiar1.jpg")));

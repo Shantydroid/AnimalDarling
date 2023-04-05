@@ -45,7 +45,7 @@
         </Grid>
     </Shell.TitleView>
 
-    <Grid RowDefinitions="Auto, *">
+    <Grid BackgroundColor="Beige" RowDefinitions="Auto, *">
         <CollectionView
             Grid.Row="0"
             ItemsLayout="HorizontalList"
@@ -56,10 +56,10 @@
                         <Border
                             Padding="10"
                             BackgroundColor="White"
-                            HeightRequest="150"
+                            HeightRequest="100"
                             StrokeShape="RoundRectangle 20"
                             StrokeThickness="1"
-                            WidthRequest="150">
+                            WidthRequest="100">
                             <Border.Triggers>
                                 <DataTrigger
                                     Binding="{Binding IsSelected, Mode=TwoWay}"

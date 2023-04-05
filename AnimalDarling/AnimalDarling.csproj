@@ -46,17 +46,23 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\backarrow.jpg" />
 	  <None Remove="Resources\Images\BackArrow.png" />
 	  <None Remove="Resources\Images\cat.svg" />
+	  <None Remove="Resources\Images\catalan.svg" />
 	  <None Remove="Resources\Images\clock.svg" />
 	  <None Remove="Resources\Images\cow.svg" />
 	  <None Remove="Resources\Images\dog.svg" />
+	  <None Remove="Resources\Images\dogomallorquin.svg" />
 	  <None Remove="Resources\Images\dove.svg" />
 	  <None Remove="Resources\Images\female.svg" />
 	  <None Remove="Resources\Images\fish.svg" />
 	  <None Remove="Resources\Images\horse.svg" />
 	  <None Remove="Resources\Images\location.svg" />
 	  <None Remove="Resources\Images\mallorquin.svg" />
+	  <None Remove="Resources\Images\mastin.svg" />
+	  <None Remove="Resources\Images\pirineo.svg" />
+	  <None Remove="Resources\Images\presacanario.svg" />
 	</ItemGroup>
 
 	<ItemGroup>
